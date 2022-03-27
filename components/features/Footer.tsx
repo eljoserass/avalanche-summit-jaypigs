@@ -4,7 +4,6 @@ const Footer = () => {
   return (
     <footer className="border-t border-solid border-dark-100 bg-white px-5 pt-16 pb-12 dark:border-dark-400 dark:bg-[#1D1328]">
       <div className="mb-6 flex items-center">
-        <span>Copyright 2022 LooksRare</span>
         <span className="mx-3">|</span>
         <span>By Jaypigs Devs</span>
       </div>
