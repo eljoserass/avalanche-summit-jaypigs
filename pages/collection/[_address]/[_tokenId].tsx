@@ -478,7 +478,7 @@ const Collection: NextPage = () => {
       const library = new ethers.providers.Web3Provider(provider);
       const signer = library.getSigner();
       let address = router.query._address!
-      const contract = new ethers.Contract(address[0], nftAbi, signer);
+      const contract = new ethers.Contract(address.toString(), nftAbi, signer);
       const transaction = await contract.setApprovalForAll(contractAddress,"1");
       await transaction.wait();
 
