@@ -17,6 +17,7 @@ export default function handler(
     const highPrice = parseFloat(String(highest));
     const lowPrice = parseFloat(String(lowest));
     let statusFilter = statusFilterEnabled;
+    // let statusFilter = 'false';
   
     if (highPrice && highPrice !== 0) {
       if (lowPrice) {
