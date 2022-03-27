@@ -475,7 +475,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         ],
     },
 ]
-
+  console.log("tokenItems: ")
+  console.log(tokenItems)
   let result = tokenItems;
   const { highest, lowest, sort, statusFilterEnabled, page, perPage } =
     req.query;
