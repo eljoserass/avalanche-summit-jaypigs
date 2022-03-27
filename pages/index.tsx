@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import ALink from "~/components/features/ALink";
 import { Web3Button, Web3Address } from "~/components/features/web3";
 
 const Home: NextPage = () => {
@@ -20,7 +21,16 @@ const Home: NextPage = () => {
       </nav>
 
       <main className="grow p-8 text-center">
-        <h1 className="pb-8 text-4xl font-bold">Home Page</h1>
+        <h2 className="pb-8 text-4xl font-bold">Home Page</h2>
+        <div>
+          <Link href="https://github.com/youssefea/jaypigs-avalanche-hackathon">
+          <h1 className="pb-8 text-4xl font-bold" >
+            Please check readme for demo instructions and simulations analysis
+            <br/>
+            <a className="text-lg font-light">click here: github.com/youssefea/jaypigs-avalanche-hackathon </a>
+          </h1>
+          </Link>
+        </div>
         <Web3Address />
       </main>
 
