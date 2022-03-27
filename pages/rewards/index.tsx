@@ -4,7 +4,14 @@ import {useState, useEffect } from 'react';
 import { ethers } from 'ethers'
 import CoinbaseWalletSDK from "@coinbase/wallet-sdk"
 import Web3Modal from "web3modal";
-import {abi, contractAddress} from '~/contract.ts';
+import {abi, contractAddress} from '~/contract';
+
+type connectorOptions = {
+  appName: string;
+  networkUrl: string;
+  chainId: number | undefined;
+};
+
 
 const providerOptions = {
   "custom-walletlink": {
@@ -53,7 +60,7 @@ const Rewards: NextPage = () => {
       const transaction = await contract.getBalance(walletAddress);
       setBalance(transaction);}
       catch(err){
-        setBalance(0);
+        setBalance("0");
       }
     }
 
@@ -70,8 +77,8 @@ const Rewards: NextPage = () => {
       const contract = new ethers.Contract(contractAddress, abi, signer);
       const walletAddress=await signer.getAddress();
       const transaction = await contract.getVolumes(walletAddress);
-      if (transaction.length==0){setVolume(0)}
-      else{const sum = transaction.reduce((partialSum, a) => partialSum + a, 0);
+      if (transaction.length==0){setVolume("0")}
+      else{const sum = transaction.reduce((partialSum : any, a : any) => partialSum + a, 0);
             setVolume(sum);}
     }
 

@@ -1,0 +1,19 @@
+{
+  "/_app": "pages/_app.js",
+  "/about": "pages/about.html",
+  "/api/collections/[...slug]": "pages/api/collections/[...slug].js",
+  "/api/collections": "pages/api/collections.js",
+  "/api/events": "pages/api/events.js",
+  "/api/explore": "pages/api/explore.js",
+  "/api/hello": "pages/api/hello.js",
+  "/collection/[_address]/[_tokenId]": "pages/collection/[_address]/[_tokenId].html",
+  "/collection/[_address]": "pages/collection/[_address].html",
+  "/collection": "pages/collection.html",
+  "/explore/activity": "pages/explore/activity.html",
+  "/explore": "pages/explore.html",
+  "/": "pages/index.html",
+  "/rewards": "pages/rewards.html",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}

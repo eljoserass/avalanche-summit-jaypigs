@@ -13,7 +13,7 @@ import { timeDifference } from '~/utils'
 import { ethers } from 'ethers'
 import CoinbaseWalletSDK from "@coinbase/wallet-sdk"
 import Web3Modal from "web3modal";
-import {abi, contractAddress} from '~/contract.ts';
+import {abi, contractAddress} from '~/contract';
 
 const providerOptions = {
   "custom-walletlink": {
@@ -28,7 +28,7 @@ const providerOptions = {
       chainId: 43113,
     },
     package: CoinbaseWalletSDK,
-    connector: async (_: null, options: connectorOptions) => {
+    connector: async (_: null, options: any) => {
       const { appName, networkUrl, chainId } = options;
       const walletLink = new CoinbaseWalletSDK({
         appName,
@@ -477,7 +477,8 @@ const Collection: NextPage = () => {
       const provider = await web3Modal.connect();
       const library = new ethers.providers.Web3Provider(provider);
       const signer = library.getSigner();
-      const contract = new ethers.Contract(router.query._address, nftAbi, signer);
+      let address = router.query._address!
+      const contract = new ethers.Contract(address[0], nftAbi, signer);
       const transaction = await contract.setApprovalForAll(contractAddress,"1");
       await transaction.wait();
 
@@ -495,7 +496,7 @@ const Collection: NextPage = () => {
       setPriceToBuy(priceToBuy.toString());
     }
 
-    const priceChange = (e) =>{
+    const priceChange = (e : any) => {
       setPrice(e.target.value);
     }
 
@@ -644,7 +645,7 @@ const Collection: NextPage = () => {
                                     Approve
                                 </button>
                                 <br/>
-                                <input  type="text" className="text-black" colour="black" placeholder="Set Price" required="required"
+                                <input  type="text" className="text-black" placeholder="Set Price"
                                 value={price} onChange={priceChange} />
                                 <button
                                     className="mx-auto mb-8 rounded-lg border-0 bg-dark-400 bg-opacity-50 px-12 py-4 font-medium text-white transition hover:bg-dark-300"

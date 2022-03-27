@@ -5,6 +5,7 @@ import Web3Modal from "web3modal";
 import { toast } from "react-toastify";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import MetamaskProvider from "@metamask/detect-provider";
+import detectEthereumProvider from "@metamask/detect-provider";
 
 import {
   Web3ProviderState,
