@@ -21,7 +21,7 @@ const Explore: NextPage = () => {
     const [url, setUrl] = useState('')
     const [page, setPage] = useState(0)
     const perPage = 14
-
+    
     const fetcher = (servicUrl: RequestInfo) =>
         fetch(servicUrl)
             .then((res) => res.json())
@@ -52,7 +52,7 @@ const Explore: NextPage = () => {
         })
 
         setUrl(
-            process.env.NEXT_PUBLIC_SERVER_URL +
+            process.env.NEXT_PUBLIC_VERCEL_URL +
                 'api/explore?' +
                 params.toString()
         )
@@ -91,7 +91,6 @@ const Explore: NextPage = () => {
         popOver?.click()
         setSort(text)
     }
-
     return (
         <div>
             <Head>

@@ -55,7 +55,7 @@ const CollectionGroup: NextPage = () => {
             })
 
             setUrl(
-                process.env.NEXT_PUBLIC_SERVER_URL +
+                process.env.NEXT_PUBLIC_VERCEL_URL +
                     'api/collections/' +
                     router.query._address +
                     '?' +

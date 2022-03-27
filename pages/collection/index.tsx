@@ -53,7 +53,7 @@ const Collection: NextPage = () => {
         clearTimeout(timer.current)
         timer.current = setTimeout(() => {
             setUrl(
-                process.env.NEXT_PUBLIC_SERVER_URL +
+                process.env.NEXT_PUBLIC_VERCEL_URL +
                     'api/collections?perPage=' +
                     perPage +
                     '&page=' +
